@@ -57,13 +57,13 @@
 2. Other oddities
     - can use parameters to assign other parameters, but parameters are defined left to right
         - so we could define x as id, but not id as x, because x comes second
-    ```
+    ```javascript
     function foo(id = required("id"), x = id) {
     }
     ```
 
 3. A really oddball case to illustrate the subtleties of lazy loading
-    ```
+    ```javascript
     var x = 1;
     function foo(x = 2, f = function() { return x; }) {
         console.log( f() );
@@ -73,7 +73,7 @@
     - outputs 2, because the closure is around the parameter, not the outer scoped x
 
     - Variation:
-    ```
+    ```javascript
     var x = 1;
     function foo(x = 2, f = function() { return x; }) {
         var x = 5;

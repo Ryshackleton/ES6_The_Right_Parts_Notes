@@ -62,7 +62,7 @@ Let within for loop to bind i
 ```
     
 Explicitly defining a scoped block
-```
+```javascript
     if (x > y) {
         { let x = 2; // declare x within its own scope for clarity, put let at the top, so other devs don't run in to the 'temporal dead zone' where the variable is not defined (e.g. if you put a console.log() before the let x, because x is not useable until it's defined within that scope)
             // ....
