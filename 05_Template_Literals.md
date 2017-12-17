@@ -73,7 +73,6 @@
      * or more likely ...values  to gather the values
      */
     function foo(strings, value1, value2, value3 ) {
-      
   
     }
     
@@ -83,4 +82,31 @@
     
     var msg = foo`Hello ${name}, your order (#${orderNumber}) was $${total}.`;
     ```
+
+    - or to ES6-ify a bit more:
+    ```javascript
+    /* a function (or declarative string) that formats
+     * currency values */
+    function currency(strings, ...values) {
+      var str = "";
+      for (var i=0; i<strings.length; i++) {
+        if (i > 0) {
+          if (typeof values[i-1] == 'number') {
+            str += values[i-1].toFixed(2); // do number formatting
+          } else {
+            str += values[i-1];
+          }
+        }
+        str += strings[i];
+      }
+      return str;
+    }
+    
+    var name = "Kyle";
+    var orderNumber = "123";
+    var total = 319.7;
+    
+    var msg = currency`Hello ${name}, your order (#${orderNumber}) was $${total}.`;
+    ```
+
 
