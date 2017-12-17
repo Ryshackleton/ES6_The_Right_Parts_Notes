@@ -230,3 +230,5 @@
       end: 13,
     };
     ```
+
+    - see final Example files for how to create custom iterator while passing in arguments with defaults, etc

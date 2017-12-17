@@ -108,5 +108,6 @@
     
     var msg = currency`Hello ${name}, your order (#${orderNumber}) was $${total}.`;
     ```
+    - See exercise files for another simple example of converting arguments to upper case
 
 
